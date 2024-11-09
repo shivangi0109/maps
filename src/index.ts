@@ -1,5 +1,7 @@
 /// <reference types="@types/google.maps" />
 import dotenv from "dotenv";
+import { CustomMap } from "./CustomMap";
+
 dotenv.config();
 
 // Get the API key from the environment
@@ -21,13 +23,8 @@ if (apiKey) {
 (window as any).initMap = function () {
   // Initialize your map or other code here
 
-  new google.maps.Map(document.getElementById('map') as HTMLElement, {
-    zoom: 1,
-    center: {
-      lat: 0,
-      lng: 0
-    }
-  });
+  new CustomMap('map');
+  new CustomMap('otherDiv');
 };
 
 // import { User } from './User';
