@@ -1,6 +1,7 @@
 /// <reference types="@types/google.maps" />
 import dotenv from "dotenv";
 import { User } from './User';
+import { Company } from './Company';
 import { CustomMap } from "./CustomMap";
 
 dotenv.config();
@@ -25,9 +26,11 @@ if (apiKey) {
   // Initialize your map or other code here
 
   const user = new User();
+  const company = new Company();
   const customMap = new CustomMap('map');
   
   customMap.addUserMarker(user);
+  customMap.addCompanyMarker(company);
 };
 
 // import { User } from './User';
